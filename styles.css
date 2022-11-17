@@ -1,0 +1,334 @@
+
+@font-face {
+    font-family: 'gordita';
+    src: url(font/gorditaBold.woff);
+}
+
+* {
+    margin: 0;
+}
+
+.game, .modal-window {
+    visibility: hidden;
+    display: none;
+}
+
+/* opening-phase
+//////////////////////////////////////////////////////////////////////////// */
+
+.opening-window {
+    height: 100vh;
+    width: auto;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(128, 128, 128, 0.64)
+
+}
+
+.op {
+    border-radius: 20px;
+    background-color: white;
+    display: flex;
+    text-align: center;
+    height: 500px;
+    width: 100%;
+    max-width: 800px;
+    flex-direction: column;
+    gap: 150px;
+    animation: slide-in 2s ease-out;
+    border: var(--darker-highlight-color) solid 5px;
+    box-shadow: 8px 8px 0px 8px var(--darker-highlight-color);
+}
+
+@keyframes slide-in {
+    0% {
+        transform: translateX(130%);
+        opacity: 0;
+        display: none;
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.question {
+    font-family: 'gordita';
+    padding-top: 70px;
+    font-size: 50px;
+    word-spacing: 5px; 
+}
+
+.buttons {
+   
+    display: flex;
+    justify-content: space-around;
+}
+
+#accept-button, 
+#refuse-button {
+    font-family: 'gordita';
+    padding: 20px;
+    font-size: 32px;
+    border: none;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 70px; 
+}
+
+#accept-button:hover, 
+#refuse-button:hover {
+   cursor: pointer;
+    transform: scale(1.2);
+}
+
+#accept-button:hover {
+    background-color: rgb(251, 139, 255);
+    color: white;
+}
+
+#refuse-button:hover {
+    background-color: rgb(37, 37, 37);
+    color: white;
+}
+
+/* game
+//////////////////////////////////////////////////////////////////////////// */
+
+body {
+    margin: 0;
+    
+}
+
+.game {
+    margin: 0;
+    font-family: "Gordita";
+    color: black;
+}
+
+.section {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.player-info, .computer-info {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    gap: 20px;
+    font-size: 100px;
+}
+
+.player-info {
+    border-right: 1px solid rgba(0, 0, 0, 0.219);
+}
+
+
+
+#rock-player:hover,
+#paper-player:hover, 
+#scissors-player:hover {
+    cursor: pointer;
+}
+
+#player, #computer {
+    font-size: 30px;
+}
+
+#player-score, #computer-score {
+    font-size: 50px;
+}
+
+#rock-player:hover {
+    color: red;
+}  
+
+#paper-player:hover {
+    color: rgb(253, 255, 117);
+}
+
+#scissors-player:hover {
+    color: rgb(251, 139, 255);
+}
+
+.play-again {
+    position: absolute;
+    align-self: end;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+}
+
+#playAgain {
+    visibility: hidden;
+    font-family: "Gordita";
+    background-color: rgb(255, 255, 255);
+    font-size: 40px;
+    border: none;
+    background-color: rgb(82, 116, 255);
+    color: rgb(255, 255, 255);
+    padding: 20px;
+    transition: 0.3s;
+}
+
+#playAgain:hover {
+    cursor: pointer;
+    padding: 20px;
+    background-color: white;
+    color:rgb(82, 116, 255);
+
+}
+
+.rules {
+    position: absolute;
+    align-self: center; 
+}
+
+#rules2 {
+    background-color: transparent;
+    padding: 0px;
+    text-transform: uppercase;
+    font-size: 45px;
+    border: none;
+    font-family: 'gordita';
+    transition: 0.5s;
+    width: 35px;
+    word-wrap: break-word;
+    color: rgb(82, 116, 255);
+    cursor: pointer;
+    writing-mode: tb-rl;
+}
+
+#rules2:hover {
+    width: 35px;
+    background-color: rgb(82, 116, 255);
+    color: white;
+}
+
+#computer-score, #player-score {
+    font-size: 70px;
+    padding-top: 10%;
+}
+
+/* modal-window
+//////////////////////////////////////////////////////////////////////////// */
+
+.modal-window {
+    display: flex;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 200ms ease-in-out;
+    border: 5px solid rgb(9, 9, 9);
+    border-radius: 10px;
+    z-index: 10;
+    background-color: white;
+    max-width: 80%;
+    padding: 10px;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: end;
+}
+
+#img-rules {
+    height: 400px;
+    
+}
+
+.modal-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'gordita';
+}
+
+#x {
+    margin-right: 7px;
+    font-size: 40px;
+    font-weight: bold;
+    border: 2px solid black;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+
+}
+
+#x:hover {
+    color: red;
+}
+
+#overlay {
+    position: fixed;
+    opacity: 0;
+    transition: 200ms ease-in-out;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .5);
+    pointer-events: none;
+}
+  
+#overlay.active {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  
+@media (orientation: portrait) {  
+
+    .section {
+        flex-direction: column;
+    }
+
+    .player-info {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.219);
+    }
+    
+    .rules {
+        
+        position: absolute;
+        align-self: flex-start;
+    }
+
+    #rules2 {     
+        color: rgb(82, 116, 255);
+        width: 20px;
+        font-size: 25px;
+        background-color: rgba(255, 164, 164, 0);
+    }
+
+    #rules2:hover {
+        width: 20px;
+    }
+
+    .play-again {
+        position: absolute;
+        align-self: center; 
+        top: 785px;
+        left: 0%;
+        right: 0;   
+    }
+
+    .player-info {
+        padding-bottom: 100px;
+    }
+    .computer-info {
+        padding-top: 100px;
+    }
+}

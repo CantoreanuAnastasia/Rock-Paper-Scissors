@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/x-icon" href="pics/controller.png">
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+</head>
+<body>
+
+    <div class="opening-window">
+        <div class="op">
+
+            <div class="question">
+                <p id="question">Want to play some<br>Rock Paper Scissors ?</p>
+            </div>
+
+            <div class="buttons">
+                <button id="accept-button">Let's go!</button>
+                <button id="refuse-button"
+                onclick="window.location.href ='https:github.com/CantoreanuAnastasia';">Not really</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="game">
+
+        <div class="section">
+
+            <div class="player-info">
+                <p id="player">You</p>
+                <p class="choiceButton"
+                    id="rock-player">Rock</p>
+                <p class="choiceButton"
+                    id="paper-player">Paper</p>
+                <p class="choiceButton"
+                    id="scissors-player">Scissors</p>
+                <p id="player-score">0</p>
+
+
+            </div>
+
+            <div class="play-again">
+                <button id="playAgain">Play again?</button>
+            </div>
+
+            <div class="rules">
+                <button id="rules2">Rules</button>
+            </div>
+
+            <div class="computer-info">
+                <p id="computer">Computer</p>
+                <p id="rock">Rock</p>
+                <p id="paper">Paper</p>
+                <p id="scissors">Scissors</p>
+                <p id="computer-score">0</p>
+            </div>   
+
+        </div>
+
+    </div>
+
+    <div class="modal-window">
+        <div class="modal-header">
+            <button id="x">&times;</button>
+        </div>
+        <div class="modal-info">
+            <img id="img-rules"
+            src="pics/rules.png">
+            <p id="beat">Beat computer 5 times to win</p>
+        </div>
+    </div>
+
+    <div id="overlay"></div>
+
+</body>
+
+<script src="app.js"></script>
+</html>
